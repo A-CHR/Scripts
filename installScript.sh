@@ -170,7 +170,11 @@ case $yns in
 		mkdir ~/.config/starship
 
 		#install pastel theme
-		wget -p ~/.config/starship https://starship.rs/presets/toml/pastel-powerline.toml
+		wget -p ~/.config/starship/- https://starship.rs/presets/toml/pastel-powerline.toml
+
+		#mv the toml file to the correct location
+		mv ~/.config/starship/starship.rs/presets/toml/pastel-powerline.toml ~/.config/starship/starship.toml
+		rmdir ~/.config/starship/starship.rs
 
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; then 
