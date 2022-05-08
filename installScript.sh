@@ -167,7 +167,7 @@ case $yns in
 		curl -sS https://starship.rs/install.sh | sh
 
 		#install pastel theme
-		wget -p ~/.config/starship https://raw.githubusercontent.com/starship/starship/master/theme/pastel.toml 
+		wget -p ~/.config/starship https://starship.rs/presets/toml/pastel-powerline.toml
 
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; then 
