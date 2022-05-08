@@ -166,6 +166,9 @@ case $yns in
 		#install starship
 		curl -sS https://starship.rs/install.sh | sh
 
+		#install pastel theme
+		wget -p ~/.config/starship https://raw.githubusercontent.com/starship/starship/master/theme/pastel.toml 
+
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
@@ -186,7 +189,7 @@ case $yns in
 		fi
 
 		if [[ ! -z $(grep 'font:' ~/.config/alacritty/alacritty.yml) ]]; then 
-			echo "WARNING: Configuration already exists"; 
+			echo "Configuration already exists"; 
 		else
 			echo "Creating font confiuration";
 			echo '#[NERD FONT FOR STARSHIP]' >> ~/.config/alacritty/alacritty.yml;
@@ -336,7 +339,7 @@ case $yni in
 		wget ~/Downloads https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz;
 		cd ~/Downloads;
 		tar -xvzf jetbrains-toolbox-1.24.11947.tar.gz;
-		cd jetbrains-toolbox-1.24.11947;
+		rm jetbrains-toolbox-1.24.11947.tar.gz;
 
 		echo "THE APPIMAGE CAN BE FOUND IN DOWNLOADS";
 
