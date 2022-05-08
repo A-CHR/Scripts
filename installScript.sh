@@ -11,7 +11,7 @@ case $yna in
 	[yY] ) echo installing;
 		
 		#install alacritty
-		sudo apt install alacritty;
+		sudo apt install alacritty -y;
 
 		#configuration file creation
 		echo "Creating configuration file";
@@ -35,7 +35,7 @@ case $ynz in
 	[yY] ) echo installing;
 		
 		#install zoxide
-		sudo apt install zoxide
+		sudo apt install zoxide -y;
 
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(zoxide init bash)"' ~/.bashrc) ]]; then 
@@ -95,11 +95,11 @@ case $ynat in
 	[yY] ) echo installing;
 
 		if [[ ! -z $(grep 'window:' ~/.config/alacritty/alacritty.yml) ]]; then 
-			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
-		fi
-		
-		if [[ ! -z $(grep 'colors:' ~/.config/alacritty/alacritty.yml) ]]; then 
-			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
+			echo "BACKING UP CONFIGURATION"; 
+			mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty-old.yml;
+		elif [[ ! -z $(grep 'colors:' ~/.config/alacritty/alacritty.yml) ]]; then 
+			echo "BACKING UP CONFIGURATION"; 
+			mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty-old.yml;
 		fi
 	
 		echo "Creating confiuration";
@@ -186,7 +186,7 @@ case $yns in
 		fi
 
 		if [[ ! -z $(grep 'font:' ~/.config/alacritty/alacritty.yml) ]]; then 
-			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
+			echo "WARNING: Configuration already exists"; 
 		else
 			echo "Creating font confiuration";
 			echo '#[NERD FONT FOR STARSHIP]' >> ~/.config/alacritty/alacritty.yml;
@@ -213,7 +213,7 @@ case $ynv in
 	[yY] ) echo installing;
 		
 		#install vscode
-		sudo apt install code;
+		sudo apt install code -y;
 
 		#ask for java
 			#try installing java
@@ -225,7 +225,7 @@ case $ynv in
 				[yY] ) echo installing;
 					
 					#install vscode
-					sudo apt install jdk-default;
+					sudo apt install default-jdk -y;
 
 					break;;
 				[nN] ) echo skipping;
@@ -252,7 +252,7 @@ case $ynd in
 	[yY] ) echo installing;
 		
 		#install discord
-		sudo apt install discord;
+		sudo apt install discord -y;
 
 		#ask for better discord
 			#try installing better discord
@@ -286,14 +286,17 @@ esac
 
 done
 
-#try ff-profile
-read -p "Do you want to open the firefox profile manager so you can import your account? (y/n) " ynff 
+#try installing tweaks
+while true; do
+read -p "Do you want to install software for customizability? (y/n) " yntw 
 
-case $ynff in 
+case $yntw in 
 	[yY] ) echo installing;
 		
-		echo 'INFO: go to "about:support" to open the folder'
-		firefox --ProfileManager;
+		#install
+		sudo add-apt-repository universe;
+		sudo apt install gnome-tweak-tool -y;
+		sudo apt install gnome-shell-extension-manager -y;
 
 		break;;
 	[nN] ) echo skipping;
@@ -303,15 +306,15 @@ esac
 
 done
 
-#try installing tweaks
-read -p "Do you want to install software for customizability? (y/n) " yntw 
+#try ff-profile
+while true; do
+read -p "Do you want to open the firefox profile manager so you can import your account? (y/n) " ynff 
 
-case $yntw in 
+case $ynff in 
 	[yY] ) echo installing;
 		
-		#install
-		sudo apt install tweaks;
-		sudo apt install extension-manager:
+		echo 'INFO: go to "about:support" to open the folder'
+		firefox --ProfileManager;
 
 		break;;
 	[nN] ) echo skipping;
