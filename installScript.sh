@@ -160,6 +160,9 @@ read -p "Do you want to install starship - pastel theme? (y/n) " yns
 case $yns in 
 	[yY] ) echo installing;
 		
+		#make the folder 
+		mdir ~/.fonts
+
 		#install font and move it into fonts so it is added
 		wget -p ~/.fonts https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/CascadiaCode/Regular/complete/Caskaydia%20Cove%20Regular%20Nerd%20Font%20Complete%20Windows%20Compatible.otf
 
@@ -170,7 +173,7 @@ case $yns in
 		mkdir ~/.config/starship
 
 		#install pastel theme
-		wget -p ~/.config/starship/- https://starship.rs/presets/toml/pastel-powerline.toml
+		wget -p ~/.config/starship https://starship.rs/presets/toml/pastel-powerline.toml
 
 		#mv the toml file to the correct location
 		mv ~/.config/starship/starship.rs/presets/toml/pastel-powerline.toml ~/.config/starship/starship.toml
