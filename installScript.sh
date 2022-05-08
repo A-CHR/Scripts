@@ -5,9 +5,9 @@
 #try installing alacritty
 while true; do
 
-read -p "Do you want to install alacritty? (y/n) " yn 
+read -p "Do you want to install alacritty? (y/n) " yna 
 
-case $yn in 
+case $yna in 
 	[yY] ) echo installing;
 		
 		#install alacritty
@@ -29,17 +29,16 @@ done
 #Try to install zoxide
 while true; do
 
-read -p "Do you want to install zoxide? (y/n) " yn 
+read -p "Do you want to install zoxide? (y/n) " ynz 
 
-case $yn in 
+case $ynz in 
 	[yY] ) echo installing;
 		
 		#install zoxide
 		sudo apt install zoxide
 
 		#add the configuration file
-		if [[ ! -z $(grep 'eval "$(zoxide init bash)"' ~/.bashrc) ]]; 
-		then 
+		if [[ ! -z $(grep 'eval "$(zoxide init bash)"' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
 		elif
 			echo "Creating confiuration";
@@ -59,9 +58,9 @@ done
 #Try to install zfz
 while true; do
 
-read -p "Do you want to install zfz? (y/n) " yn 
+read -p "Do you want to install zfz? (y/n) " ynf 
 
-case $yn in 
+case $ynf in 
 	[yY] ) echo installing;
 		
 		#install zfz
@@ -69,8 +68,7 @@ case $yn in
 		~/.fzf/install
 
 		#add the configuration file
-		if [[ ! -z $(grep '[ -f ~/.fzf.bash ] && source ~/.fzf.bash' ~/.bashrc) ]]; 
-		then 
+		if [[ ! -z $(grep '[ -f ~/.fzf.bash ] && source ~/.fzf.bash' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
 		elif
 			echo "Creating confiuration";
@@ -89,17 +87,16 @@ done
 
 
 #Try installing alacritty theme
-read -p "Do you want to install the alacritty theme ? (y/n) " yn 
+read -p "Do you want to install the alacritty theme ? (y/n) " ynat 
 
-case $yn in 
+case $ynat in 
 	[yY] ) echo installing;
 
-		if [[ ! -z $(grep 'window:' ~/.config/alacritty/alacritty.yml) ]];
-		then 
+		if [[ ! -z $(grep 'window:' ~/.config/alacritty/alacritty.yml) ]]; then 
 			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
 		fi
-		if [[ ! -z $(grep 'colors:' ~/.config/alacritty/alacritty.yml) ]];
-		then 
+		
+		if [[ ! -z $(grep 'colors:' ~/.config/alacritty/alacritty.yml) ]]; then 
 			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
 		fi
 	
@@ -156,9 +153,9 @@ done
 #Try to install starship
 while true; do
 
-read -p "Do you want to install starship - pastel theme? (y/n) " yn 
+read -p "Do you want to install starship - pastel theme? (y/n) " yns 
 
-case $yn in 
+case $yns in 
 	[yY] ) echo installing;
 		
 		#install font and move it into fonts so it is added
@@ -168,8 +165,7 @@ case $yn in
 		curl -sS https://starship.rs/install.sh | sh
 
 		#add the configuration file
-		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; 
-		then 
+		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
 		elif
 			echo "Creating confiuration";
@@ -178,8 +174,7 @@ case $yn in
 			echo 'eval "$(starship init bash)"' >> ~/.bashrc;
 		fi
 
-		if [[ ! -z $(grep 'export STARSHIP_CONFIG=~/.config/starship/starship.toml' ~/.bashrc) ]]; 
-		then 
+		if [[ ! -z $(grep 'export STARSHIP_CONFIG=~/.config/starship/starship.toml' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
 		elif
 			echo "Creating confiuration";
@@ -188,8 +183,7 @@ case $yn in
 			echo 'export STARSHIP_CONFIG=~/.config/starship/starship.toml' >> ~/.bashrc;
 		fi
 
-		if [[ ! -z $(grep 'font:' ~/.config/alacritty/alacritty.yml) ]];
-		then 
+		if [[ ! -z $(grep 'font:' ~/.config/alacritty/alacritty.yml) ]]; then 
 			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
 		elif
 			echo "Creating font confiuration";
@@ -211,9 +205,9 @@ done
 #try installing vscode
 while true; do
 
-read -p "Do you want to install alacritty? (y/n) " yn 
+read -p "Do you want to install vscode? (y/n) " ynv 
 
-case $yn in 
+case $ynv in 
 	[yY] ) echo installing;
 		
 		#install vscode
@@ -223,9 +217,9 @@ case $yn in
 			#try installing java
 			while true; do
 
-			read -p "Do you want to install java? (y/n) " yn2 
+			read -p "Do you want to install java? (y/n) " ynj 
 
-			case $yn2 in 
+			case $ynj in 
 				[yY] ) echo installing;
 					
 					#install vscode
@@ -250,9 +244,9 @@ done
 #try installing discord
 while true; do
 
-read -p "Do you want to install discord? (y/n) " yn 
+read -p "Do you want to install discord? (y/n) " ynd 
 
-case $yn in 
+case $ynd in 
 	[yY] ) echo installing;
 		
 		#install discord
@@ -262,9 +256,9 @@ case $yn in
 			#try installing better discord
 			while true; do
 
-			read -p "Do you want to install better discord? (y/n) " yn2 
+			read -p "Do you want to install better discord? (y/n) " ynb 
 
-			case $yn2 in 
+			case $ynb in 
 				[yY] ) echo installing;
 					
 					#install better discord
@@ -290,36 +284,10 @@ esac
 
 done
 
-#try installing inteliji toolbox
-while true; do
-
-read -p "Do you want to install inteliji toolbox? (y/n) " yn 
-
-case $yn in 
-	[yY] ) echo installing;
-		
-		#install
-		wget ~/Downloads https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz;
-		cd ~/Downloads;
-		tar -xvzf jetbrains-toolbox-1.24.11947.tar.gz;
-		cd jetbrains-toolbox-1.24.11947;
-
-		echo "THE APPIMAGE CAN BE FOUND IN DOWNLOADS";
-
-		cd ~;
-
-		break;;
-	[nN] ) echo skipping;
-		break;;
-	* ) echo invalid response;;
-esac
-
-done
-
 #try ff-profile
-read -p "Do you want to open the firefox profile manager so you can import your account? (y/n) " yn 
+read -p "Do you want to open the firefox profile manager so you can import your account? (y/n) " ynff 
 
-case $yn in 
+case $ynff in 
 	[yY] ) echo installing;
 		
 		echo 'INFO: go to "about:support" to open the folder'
@@ -334,14 +302,40 @@ esac
 done
 
 #try installing tweaks
-read -p "Do you want to install software for customizability? (y/n) " yn 
+read -p "Do you want to install software for customizability? (y/n) " yntw 
 
-case $yn in 
+case $yntw in 
 	[yY] ) echo installing;
 		
 		#install
 		sudo apt install tweaks;
 		sudo apt install extension-manager:
+
+		break;;
+	[nN] ) echo skipping;
+		break;;
+	* ) echo invalid response;;
+esac
+
+done
+
+#try installing inteliji toolbox
+while true; do
+
+read -p "Do you want to install inteliji toolbox? (y/n) " yni 
+
+case $yni in 
+	[yY] ) echo installing;
+		
+		#install
+		wget ~/Downloads https://download.jetbrains.com/toolbox/jetbrains-toolbox-1.24.11947.tar.gz;
+		cd ~/Downloads;
+		tar -xvzf jetbrains-toolbox-1.24.11947.tar.gz;
+		cd jetbrains-toolbox-1.24.11947;
+
+		echo "THE APPIMAGE CAN BE FOUND IN DOWNLOADS";
+
+		cd ~;
 
 		break;;
 	[nN] ) echo skipping;
