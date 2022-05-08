@@ -87,6 +87,8 @@ done
 
 
 #Try installing alacritty theme
+while true; do
+
 read -p "Do you want to install the alacritty theme ? (y/n) " ynat 
 
 case $ynat in 
