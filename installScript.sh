@@ -40,7 +40,7 @@ case $ynz in
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(zoxide init bash)"' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"
-		elif
+		else
 			echo "Creating confiuration"
 			echo '' >> ~/.bashrc
 			echo '#[ZOXIDE CONFIGURATION]' >> ~/.bashrc
@@ -70,7 +70,7 @@ case $ynf in
 		#add the configuration file
 		if [[ ! -z $(grep '[ -f ~/.fzf.bash ] && source ~/.fzf.bash' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
-		elif
+		else
 			echo "Creating confiuration";
 			echo '' >> ~/.bashrc;
 			echo '#[ZFZ CONFIGURATION]' >> ~/.bashrc;
@@ -167,7 +167,7 @@ case $yns in
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(starship init bash)"' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
-		elif
+		else
 			echo "Creating confiuration";
 			echo '' >> ~/.bashrc;
 			echo '#[Starship CONFIGURATION]' >> ~/.bashrc;
@@ -176,7 +176,7 @@ case $yns in
 
 		if [[ ! -z $(grep 'export STARSHIP_CONFIG=~/.config/starship/starship.toml' ~/.bashrc) ]]; then 
 			echo "Configuration already exists"; 
-		elif
+		else
 			echo "Creating confiuration";
 			echo '' >> ~/.bashrc;
 			echo '#[Starship CONFIGURATION - Custom folder location]' >> ~/.bashrc;
@@ -185,7 +185,7 @@ case $yns in
 
 		if [[ ! -z $(grep 'font:' ~/.config/alacritty/alacritty.yml) ]]; then 
 			echo "WARNING: Configuration already exists - ERRORS COULD OCCUR"; 
-		elif
+		else
 			echo "Creating font confiuration";
 			echo '#[NERD FONT FOR STARSHIP]' >> ~/.config/alacritty/alacritty.yml;
 			echo 'font:' >> ~/.config/alacritty/alacritty.yml;
