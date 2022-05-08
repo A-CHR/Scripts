@@ -268,6 +268,7 @@ case $ynd in
 			#try installing better discord
 			while true; do
 
+			echo "Use : betterdiscordctl install after running discord at least one"
 			read -p "Do you want to install better discord? (y/n) " ynb 
 
 			case $ynb in 
@@ -277,8 +278,6 @@ case $ynd in
 					curl -O https://raw.githubusercontent.com/bb010g/betterdiscordctl/master/betterdiscordctl;
 					chmod +x betterdiscordctl;
 					sudo mv betterdiscordctl /usr/local/bin;
-
-					betterdiscordctl install;
 
 					break;;
 				[nN] ) echo skipping;
