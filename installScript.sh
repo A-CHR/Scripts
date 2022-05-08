@@ -39,12 +39,12 @@ case $ynz in
 
 		#add the configuration file
 		if [[ ! -z $(grep 'eval "$(zoxide init bash)"' ~/.bashrc) ]]; then 
-			echo "Configuration already exists"; 
+			echo "Configuration already exists"
 		elif
-			echo "Creating confiuration";
-			echo '' >> ~/.bashrc;
-			echo '#[ZOXIDE CONFIGURATION]' >> ~/.bashrc;
-			echo 'eval "$(zoxide init bash)"' >> ~/.bashrc;
+			echo "Creating confiuration"
+			echo '' >> ~/.bashrc
+			echo '#[ZOXIDE CONFIGURATION]' >> ~/.bashrc
+			echo 'eval "$(zoxide init bash)"' >> ~/.bashrc
 		fi
 
 		break;;
