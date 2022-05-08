@@ -166,6 +166,9 @@ case $yns in
 		#install starship
 		curl -sS https://starship.rs/install.sh | sh
 
+		#make the starship folder
+		mkdir ~/.config/starship
+
 		#install pastel theme
 		wget -p ~/.config/starship https://starship.rs/presets/toml/pastel-powerline.toml
 
