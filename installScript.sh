@@ -303,9 +303,11 @@ case $yntw in
 	[yY] ) echo installing;
 		
 		#install
-		sudo add-apt-repository universe;
-		sudo apt install gnome-tweak-tool -y;
-		sudo apt install gnome-shell-extension-manager -y;
+		echo "Currently not automaically installable"
+		echo "Install manually"
+		echo "Gnome-tweaks + gnome-extension-manager"
+		#sudo apt install gnome-tweak-tool -y;
+		#sudo apt install gnome-shell-extension-manager -y;
 
 		break;;
 	[nN] ) echo skipping;
